@@ -788,7 +788,7 @@ img {
 
   .nav-toggle { display: flex; }
   .nav {
-    display: none;
+    display: flex;
     position: fixed;
     top: 0;
     left: 0;
@@ -798,11 +798,47 @@ img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 28px;
+    gap: 16px;
     z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
   }
-  .nav.open { display: flex; }
-  .nav a { font-size: 18px; padding: 8px 0; }
+  .nav.open {
+    opacity: 1;
+    visibility: visible;
+  }
+  .nav::before {
+    content: '睿钰昇';
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+  }
+  .nav a {
+    font-size: 17px;
+    padding: 14px 40px;
+    border-radius: 12px;
+    width: 220px;
+    max-width: 70vw;
+    text-align: center;
+    background: var(--bg-gray);
+    color: var(--text-dark);
+    letter-spacing: 2px;
+    border: none;
+    transition: all 0.25s;
+  }
+  .nav a:hover,
+  .nav a:active {
+    background: var(--primary-subtle);
+    color: var(--primary);
+  }
+  .nav a.active {
+    background: var(--primary-light);
+    color: white;
+    font-weight: 600;
+  }
 
   .hero {
     min-height: 60vh;
