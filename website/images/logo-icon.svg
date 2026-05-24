@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="g-leaf" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#66BB6A"/>
+      <stop offset="100%" style="stop-color:#2E9B4E"/>
+    </linearGradient>
+    <linearGradient id="g-drop" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4FC3F7"/>
+      <stop offset="100%" style="stop-color:#0288D1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 圆形底 -->
+  <circle cx="32" cy="32" r="30" fill="#E8F5E9"/>
+
+  <!-- 叶左 -->
+  <path d="M22,28 Q28,16 36,22 Q30,26 27,32Z" fill="url(#g-leaf)" opacity="0.9"/>
+  <!-- 叶右 -->
+  <path d="M37,24 Q46,18 50,26 Q42,30 38,34Z" fill="url(#g-leaf)" opacity="0.7"/>
+
+  <!-- 水滴 -->
+  <path d="M32,20 Q34,18 36,20 Q40,28 40,36 Q40,44 32,44 Q24,44 24,36 Q24,28 32,20Z"
+        fill="url(#g-drop)" opacity="0.85"/>
+  <!-- 高光 -->
+  <ellipse cx="30" cy="32" rx="2.5" ry="4" fill="white" opacity="0.45"/>
+
+  <!-- 气泡 -->
+  <circle cx="44" cy="42" r="3" fill="#4FC3F7" opacity="0.25"/>
+  <circle cx="47" cy="37" r="1.8" fill="#4FC3F7" opacity="0.15"/>
+  <circle cx="20" cy="44" r="2" fill="#4FC3F7" opacity="0.2"/>
+</svg>
