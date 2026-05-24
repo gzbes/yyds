@@ -155,10 +155,14 @@ img {
   min-height: 80vh;
 }
 
+.main.no-gap {
+  padding-top: 0;
+}
+
 /* ===== 页面横幅 ===== */
 .page-banner {
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-  padding: 60px 0;
+  padding: calc(var(--nav-height) + 30px) 0 40px 0;
   text-align: center;
   color: white;
 }
@@ -846,7 +850,7 @@ img {
 
   .contact-grid { grid-template-columns: 1fr; gap: 24px; }
 
-  .page-banner { padding: 32px 0; }
+  .page-banner { padding: calc(var(--nav-height) + 20px) 0 24px 0; }
   .page-banner h1 { font-size: 22px; }
   .page-banner p { font-size: 14px; }
   .page-section { padding: 32px 0; }
@@ -888,7 +892,7 @@ img {
   .stat-item .num { font-size: 22px; }
 
   .page-banner h1 { font-size: 20px; }
-  .page-banner { padding: 24px 0; }
+  .page-banner { padding: calc(var(--nav-height) + 16px) 0 20px 0; }
   .page-section { padding: 28px 0; }
 
   .feature-card { padding: 16px 12px; }
