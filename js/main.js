@@ -6,17 +6,29 @@ document.addEventListener('DOMContentLoaded', function() {
   var nav = document.querySelector('.nav');
 
   if (toggle && nav) {
+    function toggleNav(open) {
+      toggle.classList.toggle('active', open);
+      nav.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+
     toggle.addEventListener('click', function() {
-      toggle.classList.toggle('active');
-      nav.classList.toggle('open');
+      var isOpen = nav.classList.contains('open');
+      toggleNav(!isOpen);
     });
 
     // 点击导航链接后关闭菜单
     nav.querySelectorAll('a').forEach(function(link) {
       link.addEventListener('click', function() {
-        toggle.classList.remove('active');
-        nav.classList.remove('open');
+        toggleNav(false);
       });
+    });
+
+    // 窗口 resize 回桌面时恢复滚动
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 768 && nav.classList.contains('open')) {
+        toggleNav(false);
+      }
     });
   }
 
